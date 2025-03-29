@@ -1,6 +1,7 @@
 import analyze
+import class_average
 import preProcessing
-from preProcessing import preprocess_image
+
 
 data="example.jpg"
 
@@ -26,6 +27,9 @@ Suggestions for Improvement: [list actionable advice, resources, or methods for 
 
 student_repo_individual="""
 Provide feedback in this format:
+
+Is it correct?: Yes/No
+
 What They Did Well: [list correct items]
 
 Missing Elements: [list missing elements]
@@ -42,7 +46,9 @@ Next Steps: [list specific actions or resources that can help them improve]
 """
 
 latex_code=preProcessing.convert_to_TeX(data)
-overview=analyze.evaluate_homework(latex_code, "A matrix problem", teacher_repo_individual)
-overview2=analyze.evaluate_homework(latex_code, "A matrix problem", student_repo_individual)
-print("Teacher:", overview)
-#print("Student:", overview2)
+overview=analyze.evaluate_homework(latex_code, "A quadratic problem", teacher_repo_individual)
+overview2=analyze.evaluate_homework(latex_code, "A quadratic problem", student_repo_individual)
+
+
+report=class_average.safe_generate((overview2,overview))
+print(report)

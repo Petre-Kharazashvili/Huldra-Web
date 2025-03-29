@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb908e28-73b8-48b8-a2ce-094891d67137" name="Changes" comment="" />
+    <list default="true" id="cb908e28-73b8-48b8-a2ce-094891d67137" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,18 +50,29 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "Python.analyze.executor": "Run",
     "Python.driver.executor": "Run",
     "Python.preProcessing.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+=======
+    "Python.preprocessing.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Backend",
+>>>>>>> 34f1d24d78619b20d27c4d19bb4c4f3e1af74cdc
     "last_opened_file_path": "C:/Users/user/PycharmProjects/Hakathon_project"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\Users\user\PycharmProjects\Hackathon_iter2" />
       <recent name="C:\Users\user\PycharmProjects\Hackathon_iter2\images" />
+=======
+      <recent name="C:\Users\user\PycharmProjects\Hakathon_project\images" />
+      <recent name="C:\Users\user\PycharmProjects\Hakathon_project" />
+>>>>>>> 34f1d24d78619b20d27c4d19bb4c4f3e1af74cdc
     </key>
   </component>
   <component name="SharedIndexes">

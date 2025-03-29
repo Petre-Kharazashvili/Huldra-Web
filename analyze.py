@@ -1,11 +1,8 @@
 import re
 import google.generativeai as genai
-from pathlib import Path
-
-import preProcessing
 
 # Configure API key - use environment variables in production!
-genai.configure(api_key='AIzaSyB1Y0YHh0gYt_wtLfvtJofHwctfYodAcGA')
+genai.configure(api_key='AIzaSyDSJ_sT88Idp-DfewHnsiNGAiHNgEosi_A')
 
 
 def latex_to_text(latex_str):
@@ -25,7 +22,7 @@ def evaluate_homework(latex_text, rubric, format):
 
         # Create prompt
         prompt = f"""
-        Analyze this homework based on these criteria:
+        Analyze this homework based on these criteria keep it short and comprehensive:
         CRITERIA: {rubric}
         HOMEWORK: {plain_text}
 
@@ -33,7 +30,7 @@ def evaluate_homework(latex_text, rubric, format):
         """
 
 
-        model = genai.GenerativeModel('gemini-1.5-pro-latest')
+        model = genai.GenerativeModel('gemini-2.5-pro-exp-03-25')
         response = model.generate_content(prompt)
         return response.text
 
