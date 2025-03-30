@@ -7,6 +7,6 @@ can analyze the work gathered from continous assesment of the students during th
 and it can give a great feedback, explaining each individual student's strengths, weaknesses, gaps, etc.
 
 Key features:
-✔️ Fast & Scalable – Built with [tech stack].
+✔️ Fast & Scalable – Built with [html, css, javascript, python, numpy, restAPI].
 ✔️ Easy to Use – Simple setup and intuitive API.
 ✔️ Efficient - Allows for more individual assesment for students.
