@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Dashboard</title>
+    <link rel="stylesheet" href="../HackaThon/style.css">
+</head>
+<body>
+    <div class="profile-card">
+        <!-- Left Profile Section -->
+        <div class="profile-section">
+            <div class="profile-header">
+                <div class="header-content">
+                    <img class="profile-img" src="../HackaThon/Huldra_Black.png" alt="Profile Picture">
+                    <div class="name-title">
+                        <div class="profile-name">Dachi Khelashvili</div>
+                        <div class="profile-title">Student Profile</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="performance-card">
+                <div class="metric-item">
+                    <div>Total Attendance</div>
+                    <span class="metric-value attendance">87%</span>
+                </div>
+                
+                <div class="metric-item">
+                    <div>Average Point</div>
+                    <span class="metric-value">8.3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content Section -->
+        <div class="content-section">
+            <h2>Subjects</h2>
+            <div class="subjects-grid">
+                <!-- Maths Card -->
+                <div class="subject-card" data-subject="Maths">
+                    <div class="subject-name">Maths</div>
+                    <div class="subject-metric">
+                        <span class="metric-label">Attendance</span>
+                        <span class="attendance-value">70%</span>
+                    </div>
+                    <div class="subject-metric">
+                        <span class="metric-label">Average Point</span>
+                        <span class="points-value">9.3</span>
+                    </div>
+                </div>
+                
+                <!-- Biology Card -->
+                <div class="subject-card" data-subject="Biology">
+                    <div class="subject-name">Biology</div>
+                    <div class="subject-metric">
+                        <span class="metric-label">Attendance</span>
+                        <span class="attendance-value">70%</span>
+                    </div>
+                    <div class="subject-metric">
+                        <span class="metric-label">Average Point</span>
+                        <span class="points-value">9.3</span>
+                    </div>
+                </div>
+                
+                <!-- Sexology Card -->
+                <div class="subject-card" data-subject="Sexology">
+                    <div class="subject-name">Sexology</div>
+                    <div class="subject-metric">
+                        <span class="metric-label">Attendance</span>
+                        <span class="attendance-value">70%</span>
+                    </div>
+                    <div class="subject-metric">
+                        <span class="metric-label">Average Point</span>
+                        <span class="points-value">9.3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="subjectPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h2 id="popupSubjectTitle">Subject Progress Report</h2>
+            <button id="closePopup" class="close-btn">&times;</button>
+        </div>
+        <div id="popupBody" class="popup-body">
+            <!-- Content will be inserted here dynamically -->
+        </div>
+    </div>
+</div>
+
+    <script src="../HackaThon/script.js"></script>
+</body>
+</html>

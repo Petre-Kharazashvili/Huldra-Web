@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huldra - Class 7³</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="attendance-btn-div">
+        <h3>7³</h3>
+        <button class="view-attendance-btn" id="viewAttendanceBtn">
+            <i class="attendance-icon"></i>View Attendance
+        </button>
+    </div>
+    
+    <!-- Student Table -->
+    <div class="student-list">
+        <table>
+            <thead>
+                <tr>
+                    <th class="student-name">Student</th>
+                    <th class="add-test">add Test</th>
+                    <th class="attendance">Attendance</th>
+                    <th class="avg-score">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="student-name">Ana Beridze</td>
+                    <td class="add-test">❌</td>
+                    <td class="attendance-value">Attendance: <span contenteditable="true">92</span>%</td>
+                    <td class="score-value">Average Score: <span contenteditable="true">9.12</span></td>
+                </tr>
+                <tr>
+                    <td class="student-name">Giorgi Kapanadze</td>
+                    <td class="add-test">❌</td>
+                    <td class="attendance-value">Attendance: <span contenteditable="true">85</span>%</td>
+                    <td class="score-value">Average Score: <span contenteditable="true">7.89</span></td>
+                </tr>
+                <tr>
+                    <td class="student-name">Otar Khunashvili</td>
+                    <td class="add-test">❌</td>
+                    <td class="attendance-value">Attendance: <span contenteditable="true">100</span>%</td>
+                    <td class="score-value">Average Score: <span contenteditable="true">8.77</span></td>
+                </tr>
+                <tr>
+                    <td class="student-name">Mariam Mamulashvili</td>
+                    <td class="add-test">❌</td>
+                    <td class="attendance-value">Attendance: <span contenteditable="true">95</span>%</td>
+                    <td class="score-value">Average Score: <span contenteditable="true">9.45</span></td>
+                </tr>
+                <tr>
+                    <td class="student-name">Nika Tsereteli</td>
+                    <td class="add-test">❓</td>
+                    <td class="attendance-value">Attendance: <span contenteditable="true">78</span>%</td>
+                    <td class="score-value">Average Score: <span contenteditable="true">7.23</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Add Button with Tooltip -->
+    <div class="add-btn-div">
+        <button class="add-btn" id="addBtn">+</button>
+        <span class="tooltip">Add Test</span>
+    </div>
+
+    <!-- Main Popup Overlay -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <div class="popup-container">
+                <button class="close-btn" id="closeBtn">&times;</button>
+                
+                <div class="upload-section">
+                    <div class="upload-preview">
+                        <img id="previewImage" src="#" alt="Preview">
+                        <span>Image Preview</span>
+                    </div>
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                    <button class="upload-btn" id="uploadBtn">Upload Image</button>
+                </div>
+                <div class="text-section">
+                    <input type="text" class="test-name-input" placeholder="Test Name">
+                    <textarea class="test-overview-input" placeholder="Test Overview"></textarea>
+                    <button class="submit-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attendance Popup Overlay -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Add/Edit Test</h2>
+            <div class="form-group">
+                <label>Test Name:</label>
+                <input type="text" class="test-name-input" placeholder="Enter test name">
+            </div>
+            <div class="form-group">
+                <label>Test Overview:</label>
+                <input type="text" class="test-overview-input" placeholder="Enter test overview">
+            </div>
+            <div class="form-group">
+                <label>Additional Details:</label>
+                <textarea class="additional-details-input" placeholder="Enter additional details about the test"></textarea>
+            </div>
+            <!-- Other form elements... -->
+            <div class="form-actions">
+                <button class="submit-btn">Save</button>
+                <button id="closeBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+  <!-- Test Details Popup -->
+  <div id="testPopupOverlay" class="popup-overlay">
+    <div class="test-popup-content">
+        <span class="close-popup">&times;</span>
+        <h2 class="popup-title">Test Details</h2>
+
+        <div class="popup-body">
+            <!-- Left Side: Large Test Image -->
+            <div class="test-image-container">
+                <img id="popupTestImage" src="example_pics/example1.jpg" alt="Test Image">
+            </div>
+
+            <!-- Right Side: Comments & Buttons -->
+            <div class="right-side">
+                <div class="comments-section">
+                    <h3>Teacher's Comments</h3>
+                    <textarea id="teachersComments" class="comment-input" placeholder="Enter teacher's comments..." ></textarea>
+                </div>
+                
+                <div class="comments-section">
+                    <h3>AI Analysis</h3>
+                    <textarea id="aiAnalysis" class="comment-input" placeholder="AI analysis will appear here..." readonly></textarea>
+                </div>
+
+                <!-- Buttons in a Row -->
+                <div class="popup-actions">
+                    <button id="saveTestBtn" class="primary-btn">Save Changes</button>
+                    <button id="closeTestBtn" class="secondary-btn">Close</button>
+                    <button id="analyzeBtn" class="primary-btn" onclick="">Analyze</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="testPopupOverlay" class="popup-overlay">
+    <div class="test-popup-content">
+        <span class="close-popup">&times;</span>
+
+        <h1 class="popup-title">Test Details</h1>
+
+        <div class="popup-body">
+            <!-- Left Side: Image -->
+            <div class="test-image-container">
+                <img id="popupTestImage" src="example_pics\example1.jpg" alt="Test Image">
+            </div>
+
+            <!-- Right Side: Comments -->
+            <div class="comments-wrapper">
+                <div class="comments-section">
+                    <h2>Teacher's Comments</h2>
+                    <div id="teachersComments" class="comment-box">No teacher comments available</div>
+                </div>
+                
+                <div class="comments-section">
+                    <h2>AI Analysis</h2>
+                    <div id="aiAnalysis" class="comment-box">No AI analysis available</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="popup-actions">
+            <button id="analyzeBtn" class="primary-btn">Analyze</button>
+            <button id="newActionBtn" class="secondary-btn">New Action</button>
+            <button id="saveTestBtn" class="primary-btn">Save Changes</button>
+            <button id="closeTestBtn" class="secondary-btn">Close</button>
+        </div>
+    </div>
+</div>
+
+    <div class="assigned-tests-section">
+        <div id="assignedTestsContainer"></div>
+        <div id="testOverviewsContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="api.js"></script>
+</body>
+</html>
