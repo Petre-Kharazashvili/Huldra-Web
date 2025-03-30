@@ -646,11 +646,11 @@ if (viewAttendanceBtn) {
                     
                     // Redirect based on role
                     if (user.role === 'teacher') {
-                        window.location.href = '../HackaThon/Teacher.html';
+                        window.location.href = 'Teacher.html';
                     } else if (user.role === 'pupil') {
-                        window.location.href = '../HackaThon/Student.html';
+                        window.location.href = 'Student.html';
                     } else {
-                        window.location.href = '../HackaThon/Dashboard.html';
+                        window.location.href = 'Dashboard.html';
                     }
                 } else {
                     showError("Invalid username or password");
@@ -682,7 +682,7 @@ if (vibeBoxes && vibeBoxes.length > 0) {
             sessionStorage.setItem('selectedSubject', subject);
             
             // Use replace instead of assign to prevent back button issues
-            window.location.replace('/HackaThon/classes.html');
+            window.location.replace('classes.html');
         });
     });
 }
