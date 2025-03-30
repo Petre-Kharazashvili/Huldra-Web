@@ -1,9 +1,15 @@
+from typing import List
+
 import analyze
 import class_average
 import preProcessing
+from fastapi import FastAPI, UploadFile, File, Form
+from pydantic import BaseModel
+from io import BytesIO
+from PIL import Image
+import json
+from fastapi.middleware.cors import CORSMiddleware
 
-
-data="example.jpg"
 
 teacher_repo_individual = """
 Provide feedback in this format and keep it very short:
@@ -45,10 +51,54 @@ Things to Focus On: [point out any critical concepts or components that need att
 Next Steps: [list specific actions or resources that can help them improve]
 """
 
-latex_code=preProcessing.convert_to_TeX(data)
-overview=analyze.evaluate_homework(latex_code, "A quadratic problem", teacher_repo_individual)
-overview2=analyze.evaluate_homework(latex_code, "A quadratic problem", student_repo_individual)
+app = FastAPI()
+
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins (Change this to specific origins in production)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+)
+
+@app.post("/process_image")
+async def process_image(
+    file: UploadFile = File(...),  # Required image file
+    comment: str = Form(None),     # Optional string 1
+):
+    try:
+        # Read the uploaded image
+        image_bytes = await file.read()
+        image = Image.open(BytesIO(image_bytes))
+
+        # Example image processing: Convert to grayscale
+        gray_image = image.convert("L")
+        latex_code=preProcessing.convert_to_TeX(gray_image)
+        report=analyze.evaluate_homework(latex_code, "Evaluate how correct the work is, never use latex code in your responses.", teacher_repo_individual)
+        report = report.replace("\n", "\\n").replace('"', '\\"')
+        print("DEBUG: report =", report)  # Check if this is a non-empty string
+
+        if not report:
+            raise ValueError("Report is empty or None")
+
+        return {"report":report}
+
+    except Exception as e:
+        return {"message": f"Error processing image: {str(e)}"}
 
 
-report=class_average.safe_generate((overview2,overview))
-print(report)
+from fastapi import Request
+import json
+
+@app.post("/community")
+async def process(request: Request):
+    try:
+        raw_body = await request.body()
+        data = json.loads(raw_body)
+        string_array = data["string_array"]  # Manual extraction
+        single_string = ", ".join(string_array)
+        report = class_average.safe_generate(single_string)
+        return {"report": report}
+    except Exception as e:
+        return {"error": str(e), "received_data": data}

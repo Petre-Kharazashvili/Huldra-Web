@@ -2,11 +2,12 @@ import json
 import requests
 import base64
 import cv2
+import numpy as np
 from PIL import Image
 
 def preprocess_image(image_path):
-    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)  # Convert to grayscale
-    img = cv2.resize(img, (1024, 768))  # Resize for uniformity
+    img = image_path
+    img = cv2.resize(np.array(img), (1024, 768))  # Resize for uniformity
     img = cv2.GaussianBlur(img, (5, 5), 0)
     thresholded_image = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                               cv2.THRESH_BINARY, 11, 2)
