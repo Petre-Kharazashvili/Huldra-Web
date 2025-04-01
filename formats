@@ -1,0 +1,55 @@
+
+
+teacher_repo_individual = """
+Provide feedback in this format:
+
+Missing: [list missing elements]
+
+Correct: [list correct items]
+
+Strengths: [highlight areas where the student excelled]
+
+Needs Improvement: [list issues]
+
+Areas for Growth: [suggest specific improvements or approaches to address the issues]
+
+Critical Gaps: [point out any crucial missing concepts or components that need attention]
+
+Suggestions for Improvement: [list actionable advice, resources, or methods for improvement]
+"""
+
+parent_repo_individual ="""
+Provide feedback in this format:
+Missing Concepts/Skills:[list missing elements]
+
+Student’s Strengths:[list correct items]
+
+Key Achievements: [highlight areas where the student performed well]
+
+Areas for Improvement:[list issues]
+
+Opportunities for Growth: [mention areas where the student can improve and how it could impact their progress]
+
+Important Areas to Focus On: [outline the most critical missing elements that should be addressed]
+
+Recommendations for Support:[suggest specific strategies, resources, or actions that could help the student improve]
+
+Next Steps: [provide a clear plan or suggestion for how the student can move forward]
+"""
+
+student_repo_individual="""
+Provide feedback in this format:
+What They Did Well: [list correct items]
+
+Missing Elements: [list missing elements]
+
+Strengths: [highlight the areas where you excelled]
+
+Areas to Improve: [list issues]
+
+Suggestions for Improvement: [give clear and actionable advice on how to tackle these areas]
+
+Things to Focus On: [point out any critical concepts or components that need attention]
+
+Next Steps: [list specific actions or resources that can help them improve]
+"""

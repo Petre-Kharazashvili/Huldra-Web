@@ -1,0 +1,10 @@
+fastapi==0.115.12
+opencv_contrib_python==4.11.0.86
+opencv_python==4.11.0.86
+opencv_python_headless==4.11.0.86
+Pillow==11.1.0
+protobuf==5.29.4
+pydantic==1.10.21
+Requests==2.32.3
+google-generativeai==0.8.4  # Or the version you're using
+uvicorn==0.22.0  # Or the version you're using
